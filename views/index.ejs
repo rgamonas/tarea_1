@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Lista de Usuarios</title>
+</head>
+<body>
+  <h1>Lista de Usuarios</h1>
+  <a href="/create">Crear Usuario</a>
+  <table class="tabla-usuarios">
+    <thead>
+      <tr>
+        <!-- Eliminamos la cabecera del ID -->
+        <th>Nombres y apellidos</th>
+        <th>Tipo documento</th>
+        <th>Número documento</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.nombre + " " + user.apellido_paterno + " " + user.apellido_materno%></td>
+          <td><%= user.tipo_documento %></td>
+          <td><%= user.dni %></td>
+          <td><%= user.telefono %></td>
+          <td><%= user.correo %></td>
+          <td>
+            <a href="/edit/<%= user.id %>">Editar</a>
+            <a href="/delete/<%= user.id %>">Eliminar</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
