@@ -70,6 +70,10 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+.goToHome {
+    display: flex;
+    justify-content: center;
+}
 
 
 /* CreateUser */
