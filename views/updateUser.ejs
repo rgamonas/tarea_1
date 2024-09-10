@@ -4,8 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
-  <title>Lista de Usuarios</title>
+  <title>Editar Usuario</title>
 </head>
-<body>HOLA EDITAR
+<body>
+  <h1>Editar Usuario</h1>
+  <form action="/edit/<%= user.id %>" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="<%= user.nombre %>" required>
+    <label for="aPaterno">Apellido Paterno:</label>
+    <input type="text" name="aPaterno" id="aPaterno" value="<%= user.apellido_paterno %>" required>
+    <label for="aMaterno">Apellido Materno:</label>
+    <input type="text" name="aMaterno" id="aMaterno" value="<%= user.apellido_materno %>" required>
+    <label for="tDocumento">Tipo documento:</label>
+    <input type="text" name="tDocumento" id="tDocumento" value="<%= user.tipo_documento %>" required>
+    <label for="nDocumento">Número documento:</label>
+    <input type="text" name="nDocumento" id="nDocumento" value="<%= user.dni %>" required>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono" id="telefono" value="<%= user.telefono %>" required>
+    <label for="correo">Email:</label>
+    <input type="email" name="correo" id="correo" value="<%= user.correo %>" required>
+    <button type="submit">Actualizar</button>
+  </form>
 </body>
 </html>
